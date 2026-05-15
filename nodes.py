@@ -10,6 +10,7 @@ load_dotenv()
 SYSTEM_PROMPT = """You are a helpful assistant that can use 
 tools to answer questions. You have access to the following tools:"""
 
+
 def run_agent_reasoning(state: MessagesState) -> MessagesState:
     """
     Run the agent reasoning process, which involves generating a
@@ -17,7 +18,7 @@ def run_agent_reasoning(state: MessagesState) -> MessagesState:
     This function will be called repeatedly until the agent decides to stop.
     """
     
-    response = llm.invoke([{"role": "system", "content": SYSTEM_PROMPT}], *state["messages"])
+    response = llm.invoke([{"role": "system", "content": SYSTEM_PROMPT}] + state["messages"])
     return {"messages": [response]}
 
 

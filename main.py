@@ -37,10 +37,10 @@ app = flow.compile()
 app.get_graph().draw_mermaid_png(output_file_path="flow.png")
 
 
-
 if __name__ == "__main__":
     print("Hello from main langGraph!")
     
-    
-    # res = app.invoke({"messages": [HumanMessage(content="What is the capital of France?")]})
-    # print(res["messages"][LAST].content)
+    res = app.invoke({
+        "messages":[HumanMessage(content="is trump will atack iran again?.")],
+    })      
+    print(res["messages"][LAST].content)

@@ -16,6 +16,6 @@ def triple(x: float) -> float:
     """
     return float(x) * 3
 
-tools = [TavilySearch(max_results=1), triple]
+tools = [TavilySearch(max_results=2), triple]
 
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0).bind_tools(tools)
