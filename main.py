@@ -44,3 +44,5 @@ if __name__ == "__main__":
         "messages":[HumanMessage(content="is trump will atack iran again?.")],
     })      
     print(res["messages"][LAST].content)
+
+
